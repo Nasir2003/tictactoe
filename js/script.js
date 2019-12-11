@@ -1,7 +1,13 @@
 
+var Currentplayer = "x" 
 
+var Totalturns = 0
 
+var EndGame = false 
 
+function performLogic(buttonid,tileid) { 
+    $(buttonid)
+}
 
 
 
