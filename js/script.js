@@ -6,9 +6,17 @@ var Totalturns = 0
 var EndGame = false 
 
 function performLogic(buttonid,tileid) { 
-    $(buttonid)
+    $(buttonid).hide() 
+    $(tileid).text(Currentplayer);
 }
 
+function switchplayer(){ 
+    if(Currentplayer === "x"){ 
+        Currentplayer = "o";
+    } else if(Currentplayer === "o"){ 
+        Currentplayer = "x";
+    }
+}
 
 
 $("#button1").click(function() {
