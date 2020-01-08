@@ -1,22 +1,38 @@
 
-var Currentplayer = "x" 
+let Currentplayer = "x" 
 
-var Totalturns = 0
+let Totalturns = 0
 
-var EndGame = false 
+let EndGame = false 
 
 function performLogic(buttonid,tileid) { 
     $(buttonid).hide() 
-    $(tileid).text(Currentplayer);
+    $(tileid).text(Currentplayer);  
+    console.log("hello");
+    switchplayer(Currentplayer) 
+    updateturns();
 }
 
-function switchplayer(){ 
-    if(Currentplayer === "x"){ 
-        Currentplayer = "o";
-    } else if(Currentplayer === "o"){ 
+function switchplayer(player){ 
+    console.log(player);
+    if(player === "x"){ 
+        Currentplayer = "o"; 
+         console.log(player);
+    } else if(player === "o"){ 
         Currentplayer = "x";
     }
+} 
+
+function updateturns(){
+    (Totalturns += 1);  
+    if(Totalturns === 9){ 
+       $("h1").text("It's a draw!") 
+       Endgame = true 
+    }
+    return Totalturns;
 }
+
+    
 
 
 $("#button1").click(function() {
@@ -54,4 +70,3 @@ $("#button8").click(function() {
 $("#button9").click(function() {
     performLogic("#button9","#tile9");
 });
-
